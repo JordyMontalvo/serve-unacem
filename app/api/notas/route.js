@@ -2,6 +2,7 @@ import { NextResponse } from 'next/server';
 import connectDB from '@/lib/mongodb';
 import Nota from '@/models/Nota';
 import { v4 as uuidv4 } from 'uuid';
+import { getBaseUrl } from '@/lib/utils';
 
 export async function POST(request) {
   try {
@@ -35,7 +36,7 @@ export async function POST(request) {
         success: true,
         message: 'Subido correctamente',
         note_id: nuevaNota.note_id,
-        url: `${process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000'}/nota/${nuevaNota.note_id}`,
+        url: `${getBaseUrl()}/nota/${nuevaNota.note_id}`,
       },
       { status: 201 }
     );
