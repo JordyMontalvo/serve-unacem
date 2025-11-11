@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useCallback } from 'react';
 import { useParams } from 'next/navigation';
 
 export default function NotaPage() {
@@ -10,13 +10,9 @@ export default function NotaPage() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
 
-  useEffect(() => {
-    if (note_id) {
-      fetchNota();
-    }
-  }, [note_id]);
-
-  const fetchNota = as ync () => {
+  const fetchNota = useCallback(async () => {
+    if (!note_id) return;
+    
     try {
       setLoading(true);
       const response = await fetch(`/api/notas/${note_id}`);
@@ -32,7 +28,11 @@ export default function NotaPage() {
     } finally {
       setLoading(false);
     }
-  };
+  }, [note_id]);
+
+  useEffect(() => {
+    fetchNota();
+  }, [fetchNota]);
 
   if (loading) {
     return (
