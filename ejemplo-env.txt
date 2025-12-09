@@ -1,0 +1,24 @@
+# Variables de Entorno - Ejemplo
+# Copia este contenido a tu archivo .env.local para desarrollo local
+# O configúralas en Vercel Dashboard → Settings → Environment Variables
+
+# ============================================
+# OBLIGATORIA - URI de conexión a MongoDB
+# ============================================
+MONGODB_URI=mongodb://localhost:27017/landings-3d
+
+# Para MongoDB Atlas (producción), usa:
+# MONGODB_URI=mongodb+srv://usuario:password@cluster.mongodb.net/landings-3d?retryWrites=true&w=majority
+
+# ============================================
+# OPCIONAL - URL base de la aplicación
+# ============================================
+NEXT_PUBLIC_BASE_URL=http://localhost:3000
+
+# Para producción en Vercel, usa:
+# NEXT_PUBLIC_BASE_URL=https://tu-proyecto.vercel.app
+
+# NOTA: Si no defines NEXT_PUBLIC_BASE_URL, el sistema usará automáticamente:
+# - VERCEL_URL en Vercel (proporcionado automáticamente)
+# - http://localhost:3000 en desarrollo local
+
