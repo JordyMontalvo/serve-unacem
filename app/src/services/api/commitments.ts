@@ -1,4 +1,4 @@
-import type { CommitmentData } from '@/types';
+import type { CommitmentData } from '@/types/index';
 
 /**
  * Envía un compromiso al backend (mismo proyecto Next.js)

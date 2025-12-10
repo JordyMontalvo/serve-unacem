@@ -1,6 +1,6 @@
 import { createContext, useContext, useState } from 'react';
 import type { ReactNode } from 'react';
-import type { Step, AppState } from '@/types';
+import type { Step, AppState } from '@/types/index';
 
 interface AppContextType extends AppState {
   userName: string;

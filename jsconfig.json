@@ -6,6 +6,7 @@
       "@/components/*": ["./app/src/components/*"],
       "@/contexts/*": ["./app/src/contexts/*"],
       "@/services/*": ["./app/src/services/*"],
+      "@/types": ["./app/src/types/index.ts"],
       "@/types/*": ["./app/src/types/*"],
       "@/utils/*": ["./app/src/utils/*"],
       "@/styles/*": ["./app/src/styles/*"],
