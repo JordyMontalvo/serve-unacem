@@ -3,6 +3,13 @@ import type { ReactNode } from 'react';
 import type { Step, AppState } from '@/types';
 
 interface AppContextType extends AppState {
+  userName: string;
+  commitment: string;
+  signature: string;
+  commitmentUrl: string | null;
+  currentStep: Step;
+  isLoading: boolean;
+  error: string | null;
   setUserName: (name: string) => void;
   setCommitment: (commitment: string) => void;
   setSignature: (signature: string) => void;
