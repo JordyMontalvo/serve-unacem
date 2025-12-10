@@ -8,14 +8,12 @@ import { SemillaExperience } from '@/components/Semilla/SemillaExperience';
 import { CertificateScreen } from '@/components/Certificate/CertificateScreen';
 import { ThankYouScreen } from '@/components/ThankYou/ThankYouScreen';
 import { LoadingSpinner } from '@/components/Layout/LoadingSpinner';
-import { OrientationPrompt } from '@/components/Layout/OrientationPrompt';
 
 function AppContent() {
   const { currentStep, isLoading } = useAppContext();
 
   return (
     <div className="min-h-screen bg-white">
-      <OrientationPrompt />
       <AnimatePresence mode="wait">
         {isLoading ? (
           <LoadingSpinner key="loading" />
