@@ -1,86 +1,89 @@
-# Landings 3D - Sistema de Notas
+# Semilla de Compromisos - UNACEM
 
-Sistema web para crear y compartir notas únicas con Next.js y MongoDB.
+Experiencia interactiva "Semilla de Compromisos" para el evento THM de UNACEM.
 
-## Características
+## 🚀 Inicio Rápido
 
-- ✅ Crear notas con nombre, email y contenido
-- ✅ Almacenamiento en MongoDB
-- ✅ URLs únicas para cada nota usando ID
-- ✅ Mensaje de éxito al subir correctamente
-- ✅ Página exclusiva para cada nota
-
-## Requisitos
-
-- Node.js 18 o superior
-- MongoDB (local o MongoDB Atlas)
-
-## Instalación
-
-1. Instala las dependencias:
 ```bash
+# Instalar dependencias
 npm install
-```
 
-2. Crea un archivo `.env.local` en la raíz del proyecto:
-```env
-MONGODB_URI=mongodb://localhost:27017/landings-3d
-NEXT_PUBLIC_BASE_URL=http://localhost:3000
-```
+# Configurar variables de entorno
+cp .env.example .env.local
+# Editar .env.local con tus valores
 
-3. Asegúrate de que MongoDB esté ejecutándose.
-
-4. Inicia el servidor de desarrollo:
-```bash
+# Iniciar servidor de desarrollo
 npm run dev
+
+# Build para producción
+npm run build
+
+# Iniciar servidor de producción
+npm start
 ```
 
-5. Abre [http://localhost:3000](http://localhost:3000) en tu navegador.
-
-## Estructura del Proyecto
+## 📁 Estructura del Proyecto
 
 ```
+landings-3D/
 ├── app/
 │   ├── api/
-│   │   └── notas/
-│   │       ├── route.js (POST - crear nota)
-│   │       └── [note_id]/route.js (GET - obtener nota)
-│   ├── nota/
-│   │   └── [note_id]/
-│   │       └── page.jsx (página de visualización de nota)
-│   ├── layout.jsx
-│   ├── page.jsx (formulario principal)
-│   └── globals.css
-├── lib/
-│   └── mongodb.js (configuración de conexión)
-├── models/
-│   └── Nota.js (modelo de MongoDB)
+│   │   └── commitments/      # APIs de compromisos
+│   ├── src/
+│   │   ├── components/       # Componentes React
+│   │   ├── contexts/         # Estado global
+│   │   ├── services/         # Servicios/API
+│   │   ├── types/            # TypeScript types
+│   │   ├── utils/            # Utilidades
+│   │   └── styles/           # Estilos CSS
+│   ├── page.jsx              # Página principal
+│   └── layout.jsx            # Layout raíz
+├── lib/                      # Utilidades del backend
+├── models/                   # Modelos de MongoDB
+├── public/                   # Assets estáticos
 └── package.json
 ```
 
-## Uso
+## ⚙️ Variables de Entorno
 
-1. Completa el formulario en la página principal con:
-   - Nombre
-   - Email
-   - Nota (contenido)
+Crea un archivo `.env.local`:
 
-2. Haz clic en "Subir Nota"
+```env
+# MongoDB (OBLIGATORIA)
+MONGODB_URI=mongodb://localhost:27017/unacem
 
-3. Una vez subida correctamente, recibirás un mensaje de éxito y una URL única
+# Para MongoDB Atlas:
+# MONGODB_URI=mongodb+srv://usuario:password@cluster.mongodb.net/unacem?retryWrites=true&w=majority
 
-4. Puedes compartir esa URL para que otros accedan a tu nota
+# URL base (opcional, para generar URLs de compromisos)
+NEXT_PUBLIC_BASE_URL=http://localhost:3000
+```
 
-## Variables de Entorno
+## 🛠️ Stack Tecnológico
 
-- `MONGODB_URI`: URI de conexión a MongoDB
-- `NEXT_PUBLIC_BASE_URL`: URL base de la aplicación (para generar las URLs de las notas)
+- **Next.js 14** - Framework React
+- **React 18** - Biblioteca UI
+- **TypeScript** - Tipado estático
+- **MongoDB + Mongoose** - Base de datos
+- **Tailwind CSS** - Estilos
+- **Framer Motion** - Animaciones
 
-## Tecnologías
+## 📦 Despliegue en Vercel
 
-- Next.js 14
-- React 18
-- JavaScript
-- MongoDB con Mongoose
-- Tailwind CSS
-- UUID para IDs únicos
+1. Conecta tu repositorio a Vercel
+2. Configura las variables de entorno en Vercel Dashboard
+3. Vercel detectará automáticamente Next.js y desplegará
+
+### Variables de Entorno en Vercel
+
+- `MONGODB_URI` - URI de conexión a MongoDB Atlas
+- `NEXT_PUBLIC_BASE_URL` - URL de tu proyecto en Vercel (opcional)
+
+## 📚 Documentación
+
+- Ver `VARIABLES_ENTORNO.md` para configuración detallada
+- Ver `VERCEL_SETUP.md` para guía de despliegue
+
+---
+
+**Versión:** 1.0.0 (Proyecto Unificado)

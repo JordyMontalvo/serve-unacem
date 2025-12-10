@@ -1,0 +1,102 @@
+import { useState, useRef } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { useAppContext } from '@/contexts/AppContext';
+import { NarrativeBox } from './NarrativeBox';
+import { CommitmentBox } from './CommitmentBox';
+
+type SemillaState = 'presentation' | 'animating' | 'exposed';
+
+export const SemillaExperience = () => {
+  const { currentStep } = useAppContext();
+  const [state, setState] = useState<SemillaState>('presentation');
+  const [showCommitmentBox, setShowCommitmentBox] = useState(false);
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  // Solo renderizar si estamos en los pasos correctos
+  if (currentStep !== 'seed' && currentStep !== 'commitment') {
+    return null;
+  }
+
+  const startAnimation = () => {
+    setState('animating');
+  };
+
+  const handleVideoEnd = () => {
+    setState('exposed');
+    setTimeout(() => {
+      setShowCommitmentBox(true);
+    }, 500);
+  };
+
+  return (
+    <div className="relative min-h-screen bg-black flex items-center justify-center overflow-hidden">
+      <AnimatePresence mode="wait">
+        {/* Estado: Presentación */}
+        {state === 'presentation' && (
+          <motion.div
+            key="presentation"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.5 }}
+            className="flex flex-col items-center justify-center w-full h-screen"
+          >
+            <img
+              src="/assets/images/semilla davinci.png"
+              alt="Semilla de compromisos"
+              className="max-w-[500px] w-full h-auto object-contain px-5"
+            />
+            <NarrativeBox onComplete={startAnimation} />
+          </motion.div>
+        )}
+
+        {/* Estado: Animación */}
+        {state === 'animating' && (
+          <motion.div
+            key="animating"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.3 }}
+            className="flex items-center justify-center w-full h-screen"
+          >
+            <video
+              ref={videoRef}
+              src="/assets/videos/semillakling.mp4"
+              autoPlay
+              muted
+              playsInline
+              onEnded={handleVideoEnd}
+              className="max-w-[500px] w-full h-auto object-contain"
+            >
+              <source src="/assets/videos/semillakling.mp4" type="video/mp4" />
+            </video>
+          </motion.div>
+        )}
+
+        {/* Estado: Expuesta */}
+        {state === 'exposed' && (
+          <div className="relative w-full min-h-screen flex flex-col items-center justify-center">
+            {/* Contenedor de la semilla - siempre centrada y visible */}
+            <div className="flex-1 flex items-center justify-center w-full pb-64 md:pb-72">
+              <motion.img
+                key="exposed"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.5 }}
+                src="/assets/images/semilla-expuesta.png"
+                alt="Semilla expuesta con núcleo rojo"
+                className="max-w-[500px] w-full h-auto object-contain px-5 z-10"
+              />
+              {/* Efecto de glow en el núcleo rojo */}
+              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-red-500 opacity-20 rounded-full blur-3xl pointer-events-none animate-pulse z-0" />
+            </div>
+            
+            {/* Caja de compromiso en la parte inferior */}
+            {showCommitmentBox && <CommitmentBox />}
+          </div>
+        )}
+      </AnimatePresence>
+    </div>
+  );
+};

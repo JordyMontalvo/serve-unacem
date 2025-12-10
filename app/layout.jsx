@@ -1,8 +1,8 @@
 import './globals.css';
 
 export const metadata = {
-  title: 'Landings 3D - Sistema de Notas',
-  description: 'Sistema para crear y compartir notas únicas',
+  title: 'Semilla de Compromisos - UNACEM',
+  description: 'Experiencia interactiva Semilla de Compromisos para el evento THM de UNACEM',
 };
 
 export default function RootLayout({ children }) {
