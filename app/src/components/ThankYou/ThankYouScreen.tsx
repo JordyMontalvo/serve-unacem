@@ -54,13 +54,13 @@ export const ThankYouScreen = () => {
           />
         </motion.div>
 
-        {/* URL del compromiso - OCULTA POR EL MOMENTO */}
-        {/* {commitmentUrl && (
+        {/* URL del compromiso */}
+        {commitmentUrl && (
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.8 }}
-            className="mb-6 p-4 bg-green-50 border border-green-200 rounded-lg"
+            className="mb-6 p-4 bg-green-50 border border-green-200 rounded-lg max-w-full"
           >
             <p className="text-sm text-green-800 font-semibold mb-2" style={{ fontFamily: 'Silka, sans-serif' }}>
               ✓ Tu compromiso ha sido guardado
@@ -78,13 +78,13 @@ export const ThankYouScreen = () => {
               {commitmentUrl}
             </a>
           </motion.div>
-        )} */}
+        )}
 
         {/* Mensaje final */}
         <motion.p
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 0.8 }}
+          transition={{ delay: commitmentUrl ? 1.0 : 0.8 }}
           className="text-lg text-gray-600"
           style={{ fontFamily: 'Silka, sans-serif' }}
         >
