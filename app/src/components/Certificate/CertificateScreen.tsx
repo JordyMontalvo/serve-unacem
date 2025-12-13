@@ -52,21 +52,31 @@ export const CertificateScreen = () => {
           />
 
           {/* Contenido del certificado superpuesto */}
-          <div className="absolute inset-0 flex flex-col justify-center p-8 md:p-12">
-            {/* Título COMPROMISO 2026 - más cerca del texto */}
-            <div className="text-center mb-4">
+          <div className="absolute inset-0 flex flex-col p-8 md:p-12 pt-16 md:pt-20">
+            {/* Título COMPROMISO 2026 - bajado un poco */}
+            <div className="text-center mb-6">
               <h1
-                className="text-2xl md:text-3xl lg:text-4xl font-bold text-black uppercase"
+                className="text-2xl md:text-3xl lg:text-4xl font-bold text-black uppercase mt-25"
                 style={{ fontFamily: 'Chaney, serif' }}
               >
                 COMPROMISO 2026
               </h1>
             </div>
 
+            {/* Texto de compromiso personalizado */}
+            <div className="text-center mb-4">
+              <p
+                className="text-base md:text-lg lg:text-xl text-black"
+                style={{ fontFamily: 'Silka, sans-serif' }}
+              >
+                YO, <strong>{userName}</strong>, ME COMPROMETO A:
+              </p>
+            </div>
+
             {/* Compromiso - texto más grande y centrado */}
             <div className="flex-1 flex items-center justify-center my-6 md:my-8">
               <p
-                className="text-lg md:text-xl lg:text-2xl text-black text-center leading-relaxed max-h-[400px] overflow-y-auto px-4 md:px-8"
+                className="text-xl md:text-2xl lg:text-3xl mb-25 text-black text-center leading-relaxed max-h-[400px] overflow-y-auto px-4 md:px-8"
                 style={{ fontFamily: 'Silka, sans-serif' }}
               >
                 {commitment}

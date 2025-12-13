@@ -53,7 +53,7 @@ export const NarrativeBox = ({ onComplete }: NarrativeBoxProps) => {
     <motion.div
       initial={{ opacity: 0, y: 100 }}
       animate={{ opacity: 1, y: 0 }}
-      className="fixed bottom-0 left-0 right-0 bg-black bg-opacity-80 text-white p-6 md:p-8 border-t-4 border-[#FF0000]"
+      className="fixed bottom-0 left-0 right-0 bg-white bg-opacity-80 text-black p-6 md:p-8 border-t-4 border-[#FF0000]"
       style={{ fontFamily: 'monospace' }}
     >
       <div className="max-w-4xl mx-auto">

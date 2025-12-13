@@ -40,7 +40,7 @@ export const WelcomeScreen = () => {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.4 }}
-        className="text-lg md:text-xl text-black text-left max-w-[650px] mb-12 leading-relaxed px-5"
+        className="text-lg md:text-xl text-black text-center max-w-[650px] mb-12 leading-relaxed px-5"
         style={{ fontFamily: 'Silka, sans-serif' }}
       >
         Cada compromiso que plantamos hoy transformará nuestro mañana.{' '}
