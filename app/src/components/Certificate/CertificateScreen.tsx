@@ -52,11 +52,11 @@ export const CertificateScreen = () => {
           />
 
           {/* Contenido del certificado superpuesto */}
-          <div className="absolute inset-0 flex flex-col p-8 md:p-12 pt-16 md:pt-20">
+          <div className="absolute inset-0 flex flex-col px-4 py-6 md:p-12 md:pt-20">
             {/* Título COMPROMISO 2026 - bajado un poco */}
-            <div className="text-center mb-6">
+            <div className="text-center mb-4 md:mb-6">
               <h1
-                className="text-2xl md:text-3xl lg:text-4xl font-bold text-black uppercase mt-25"
+                className="text-xl md:text-3xl lg:text-4xl font-bold text-black uppercase mt-1 md:mt-0"
                 style={{ fontFamily: 'Chaney, serif' }}
               >
                 COMPROMISO 2026
@@ -64,9 +64,9 @@ export const CertificateScreen = () => {
             </div>
 
             {/* Texto de compromiso personalizado */}
-            <div className="text-center mb-4">
+            <div className="text-center mb-2 md:mb-4">
               <p
-                className="text-base md:text-lg lg:text-xl text-black"
+                className="text-sm md:text-lg lg:text-xl text-black"
                 style={{ fontFamily: 'Silka, sans-serif' }}
               >
                 YO, <strong>{userName}</strong>, ME COMPROMETO A:
@@ -74,9 +74,9 @@ export const CertificateScreen = () => {
             </div>
 
             {/* Compromiso - texto más grande y centrado */}
-            <div className="flex-1 flex items-center justify-center my-6 md:my-8">
+            <div className="flex-1 flex items-center justify-center my-4 md:my-8">
               <p
-                className="text-xl md:text-2xl lg:text-3xl mb-25 text-black text-center leading-relaxed max-h-[400px] overflow-y-auto px-4 md:px-8"
+                className="text-lg md:text-2xl lg:text-3xl mb-2 text-black text-center leading-relaxed max-h-[40vh] md:max-h-[400px] overflow-y-auto px-2 md:px-8"
                 style={{ fontFamily: 'Silka, sans-serif' }}
               >
                 {commitment}
@@ -84,9 +84,9 @@ export const CertificateScreen = () => {
             </div>
 
             {/* Nombre abajo - sin input */}
-            <div className="mt-auto text-center pt-4">
+            <div className="mt-auto text-center pt-2 md:pt-4">
               <p
-                className="text-base md:text-lg lg:text-xl text-black"
+                className="text-sm md:text-lg lg:text-xl text-black"
                 style={{ fontFamily: 'Silka, sans-serif' }}
               >
                 {userName}
