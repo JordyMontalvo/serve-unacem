@@ -6,11 +6,11 @@ interface NarrativeBoxProps {
 }
 
 const narrativeText = [
-  '> Luna te muestra una semilla muy especial...',
-  '> Dentro de cada semilla hay un potencial inmenso.',
-  '> Pero esta semilla es diferente.',
-  '> Contiene un núcleo rojo que representa compromiso.',
-  '> Tu compromiso es lo que la hará crecer.',
+  '> Esta es una semilla especial...',
+  '> En su interior hay un compromiso por asumir',
+  '> Ese compromiso es el núcleo de esta semilla',
+  '> Es lo que nos impulsa a liberar el valor de nuestras operaciones y llevarlas a su máximo potencial',
+  '> Y así fortalecer nuestras bases sobre las que queremos construir el futuro',
   '> Observa cómo se revela su interior...',
 ];
 
