@@ -101,8 +101,11 @@ export default function CompromisoPage() {
             </div>
 
 
-            <div className="flex-1 min-h-0 flex items-start justify-start md:items-center md:justify-center my-2 md:my-6">
-              <div className="box-border w-full max-w-full p-[25px] md:p-0 md:px-8 pb-8 max-h-[45vh] md:max-h-[400px] overflow-y-auto overflow-x-hidden">
+            <div
+              className="flex-1 min-h-0 overflow-y-auto overflow-x-hidden px-0 md:px-8 pb-16 md:pb-8"
+              style={{ overscrollBehavior: 'contain' }}
+            >
+              <div className="box-border w-full p-[25px] md:p-0">
                 <p
                   className="text-base md:text-2xl lg:text-3xl text-black text-center leading-snug md:leading-relaxed whitespace-pre-wrap break-words"
                   style={{ fontFamily: 'Silka, sans-serif', wordBreak: 'break-word', overflowWrap: 'anywhere' }}

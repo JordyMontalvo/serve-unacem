@@ -73,9 +73,12 @@ export const CertificateScreen = () => {
               </p>
             </div>
 
-            {/* Compromiso - texto más grande y centrado */}
-            <div className="flex-1 min-h-0 flex items-start justify-start md:items-center md:justify-center my-4 md:my-8">
-              <div className="box-border w-full max-w-full p-[25px] md:p-0 md:px-8 pb-8 max-h-[45vh] md:max-h-[400px] overflow-y-auto overflow-x-hidden">
+            {/* Compromiso - área con scroll dentro del marco en móvil */}
+            <div
+              className="flex-1 min-h-0 overflow-y-auto overflow-x-hidden px-0 md:px-8 pb-16 md:pb-8"
+              style={{ overscrollBehavior: 'contain' }}
+            >
+              <div className="box-border w-full p-[25px] md:p-0">
                 <p
                   className="text-lg md:text-2xl lg:text-3xl mb-2 text-black text-center leading-snug md:leading-relaxed break-words"
                   style={{ fontFamily: 'Silka, sans-serif', wordBreak: 'break-word', overflowWrap: 'anywhere' }}
