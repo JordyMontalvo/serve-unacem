@@ -62,14 +62,14 @@ export const SemillaExperience = () => {
           >
             <video
               ref={videoRef}
-              src="/assets/videos/semillakling.mp4"
+              src="/assets/semillaopen.mp4"
               autoPlay
               muted
               playsInline
               onEnded={handleVideoEnd}
               className="max-w-[500px] w-full h-auto object-contain"
             >
-              <source src="/assets/videos/semillakling.mp4" type="video/mp4" />
+              <source src="/assets/semillaopen.mp4" type="video/mp4" />
             </video>
           </motion.div>
         )}

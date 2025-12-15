@@ -46,7 +46,7 @@ export const CertificateScreen = () => {
         >
           {/* Marco decorativo de fondo */}
           <img
-            src="/assets/images/marco cuadrado final.png"
+            src="/assets/semilla1.png"
             alt="Marco certificado"
             className="w-full h-auto"
           />
