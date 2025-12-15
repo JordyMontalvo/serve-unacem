@@ -75,12 +75,14 @@ export const CertificateScreen = () => {
 
             {/* Compromiso - texto más grande y centrado */}
             <div className="flex-1 flex items-center justify-center my-4 md:my-8">
-              <p
-                className="text-lg md:text-2xl lg:text-3xl mb-2 text-black text-center leading-relaxed max-h-[40vh] md:max-h-[400px] overflow-y-auto px-2 md:px-8 break-words"
-                style={{ fontFamily: 'Silka, sans-serif', wordBreak: 'break-word', overflowWrap: 'anywhere' }}
-              >
-                {commitment}
-              </p>
+              <div className="max-h-[40vh] md:max-h-[400px] overflow-y-auto p-[25px] md:p-0 md:px-8 w-full">
+                <p
+                  className="text-lg md:text-2xl lg:text-3xl mb-2 text-black text-center leading-relaxed break-words"
+                  style={{ fontFamily: 'Silka, sans-serif', wordBreak: 'break-word', overflowWrap: 'anywhere' }}
+                >
+                  {commitment}
+                </p>
+              </div>
             </div>
 
             {/* Nombre abajo - sin input */}
