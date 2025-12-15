@@ -103,8 +103,8 @@ export default function CompromisoPage() {
 
             <div className="flex-1 flex items-center justify-center my-4 md:my-6">
               <p
-                className="text-xl md:text-2xl lg:text-3xl text-black text-center leading-relaxed whitespace-pre-wrap px-4 md:px-8"
-                style={{ fontFamily: 'Silka, sans-serif' }}
+                className="text-xl md:text-2xl lg:text-3xl text-black text-center leading-relaxed whitespace-pre-wrap px-4 md:px-8 break-words"
+                style={{ fontFamily: 'Silka, sans-serif', wordBreak: 'break-word', overflowWrap: 'anywhere' }}
               >
                 {commitment.commitment}
               </p>

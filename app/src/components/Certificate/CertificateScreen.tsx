@@ -76,8 +76,8 @@ export const CertificateScreen = () => {
             {/* Compromiso - texto más grande y centrado */}
             <div className="flex-1 flex items-center justify-center my-4 md:my-8">
               <p
-                className="text-lg md:text-2xl lg:text-3xl mb-2 text-black text-center leading-relaxed max-h-[40vh] md:max-h-[400px] overflow-y-auto px-2 md:px-8"
-                style={{ fontFamily: 'Silka, sans-serif' }}
+                className="text-lg md:text-2xl lg:text-3xl mb-2 text-black text-center leading-relaxed max-h-[40vh] md:max-h-[400px] overflow-y-auto px-2 md:px-8 break-words"
+                style={{ fontFamily: 'Silka, sans-serif', wordBreak: 'break-word', overflowWrap: 'anywhere' }}
               >
                 {commitment}
               </p>
