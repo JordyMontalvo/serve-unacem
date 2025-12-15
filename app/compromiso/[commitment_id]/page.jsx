@@ -115,14 +115,6 @@ export default function CompromisoPage() {
               </div>
             </div>
 
-            <div className="mt-auto text-center pt-2">
-              <p
-                className="text-base md:text-lg lg:text-xl text-black"
-                style={{ fontFamily: 'Silka, sans-serif' }}
-              >
-                {commitment.signature || commitment.userName}
-              </p>
-            </div>
           </div>
         </div>
 
