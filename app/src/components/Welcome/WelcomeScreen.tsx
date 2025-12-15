@@ -20,7 +20,7 @@ export const WelcomeScreen = () => {
         <img
           src="/assets/images/LOGO_Grupo Unacem.png"
           alt="GRUPO UNACEM"
-          className="max-w-[200px] h-auto mx-auto"
+          className="max-w-[300px] md:max-w-[400px] h-auto mx-auto"
         />
       </motion.div>
 
@@ -32,7 +32,7 @@ export const WelcomeScreen = () => {
         className="font-chaney text-[40px] md:text-[48px] text-black text-center uppercase leading-tight max-w-[900px] mb-10 px-5"
         style={{ fontFamily: 'Chaney, serif' }}
       >
-        TU COMPROMISO ES LA SEMILLA DE NUESTRO FUTURO
+        LA SEMILLA DEL COMPROMISO
       </motion.h1>
 
       {/* Texto Narrativo */}
@@ -43,9 +43,7 @@ export const WelcomeScreen = () => {
         className="text-lg md:text-xl text-black text-center max-w-[650px] mb-12 leading-relaxed px-5"
         style={{ fontFamily: 'Silka, sans-serif' }}
       >
-        Cada compromiso que plantamos hoy transformará nuestro mañana.{' '}
-        <br className="hidden md:block" />
-        Acompaña a Luna para crear una semilla única con tu compromiso hacia el 2026.
+        Sembremos nuestro compromiso con el futuro del Grupo UNACEM
       </motion.p>
 
       {/* Botón COMENZAR */}
