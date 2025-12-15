@@ -52,7 +52,7 @@ export const CertificateScreen = () => {
           />
 
           {/* Contenido del certificado superpuesto */}
-          <div className="absolute inset-0 flex flex-col px-4 pt-12 pb-6 md:p-12 md:pt-20 min-h-0">
+          <div className="absolute inset-0 flex flex-col px-4 pt-12 pb-6 md:p-12 md:pt-20 lg:pt-28 min-h-0">
             {/* Título COMPROMISO 2026 - bajado un poco */}
             <div className="text-center mb-4 md:mb-6">
               <h1
