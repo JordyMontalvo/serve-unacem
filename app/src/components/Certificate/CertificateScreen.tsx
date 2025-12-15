@@ -42,7 +42,7 @@ export const CertificateScreen = () => {
           initial={{ scale: 0.9, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           transition={{ duration: 0.5 }}
-          className="relative"
+          className="relative overflow-hidden"
         >
           {/* Marco decorativo de fondo */}
           <img
@@ -52,7 +52,7 @@ export const CertificateScreen = () => {
           />
 
           {/* Contenido del certificado superpuesto */}
-          <div className="absolute inset-0 flex flex-col px-4 pt-12 pb-6 md:p-12 md:pt-20 mt-8">
+          <div className="absolute inset-0 flex flex-col px-4 pt-12 pb-6 md:p-12 md:pt-20 min-h-0">
             {/* Título COMPROMISO 2026 - bajado un poco */}
             <div className="text-center mb-4 md:mb-6">
               <h1
@@ -74,7 +74,7 @@ export const CertificateScreen = () => {
             </div>
 
             {/* Compromiso - texto más grande y centrado */}
-            <div className="flex-1 flex items-start justify-start md:items-center md:justify-center my-4 md:my-8">
+            <div className="flex-1 min-h-0 flex items-start justify-start md:items-center md:justify-center my-4 md:my-8">
               <div className="box-border w-full max-w-full p-[25px] md:p-0 md:px-8 pb-8 max-h-[45vh] md:max-h-[400px] overflow-y-auto overflow-x-hidden">
                 <p
                   className="text-lg md:text-2xl lg:text-3xl mb-2 text-black text-center leading-snug md:leading-relaxed break-words"

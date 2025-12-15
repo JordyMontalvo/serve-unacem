@@ -74,14 +74,14 @@ export default function CompromisoPage() {
           </a>
         </div>
 
-        <div className="relative">
+        <div className="relative overflow-hidden">
           <img
             src="/assets/images/marco cuadrado final.png"
             alt="Marco certificado"
             className="w-full h-auto"
           />
 
-          <div className="absolute inset-0 flex flex-col p-8 md:p-12 pt-16 md:pt-20">
+          <div className="absolute inset-0 flex flex-col p-8 md:p-12 pt-16 md:pt-20 min-h-0">
             <div className="text-center mb-4">
               <h1
                 className="text-2xl md:text-3xl lg:text-4xl font-bold text-black uppercase"
@@ -101,7 +101,7 @@ export default function CompromisoPage() {
             </div>
 
 
-            <div className="flex-1 flex items-start justify-start md:items-center md:justify-center my-2 md:my-6">
+            <div className="flex-1 min-h-0 flex items-start justify-start md:items-center md:justify-center my-2 md:my-6">
               <div className="box-border w-full max-w-full p-[25px] md:p-0 md:px-8 pb-8 max-h-[45vh] md:max-h-[400px] overflow-y-auto overflow-x-hidden">
                 <p
                   className="text-base md:text-2xl lg:text-3xl text-black text-center leading-snug md:leading-relaxed whitespace-pre-wrap break-words"
