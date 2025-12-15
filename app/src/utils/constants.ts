@@ -15,7 +15,7 @@ export const VALIDATION = {
   nameMinLength: 2,
   nameMaxLength: 50,
   commitmentMinLength: 10,
-  commitmentMaxLength: 500,
+  commitmentMaxLength: 180,
   signatureMinLength: 2,
 } as const;
 
