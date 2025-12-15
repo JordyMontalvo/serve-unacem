@@ -84,16 +84,6 @@ export const CertificateScreen = () => {
                 </p>
               </div>
             </div>
-
-            {/* Nombre abajo - sin input */}
-            <div className="mt-auto text-center pt-2 md:pt-4">
-              <p
-                className="text-sm md:text-lg lg:text-xl text-black"
-                style={{ fontFamily: 'Silka, sans-serif' }}
-              >
-                {userName}
-              </p>
-            </div>
           </div>
         </motion.div>
 
