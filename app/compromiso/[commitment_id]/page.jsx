@@ -81,7 +81,7 @@ export default function CompromisoPage() {
             className="w-full h-auto"
           />
 
-          <div className="absolute inset-0 flex flex-col p-8 md:p-12 pt-20 md:pt-20">
+          <div className="absolute inset-0 flex flex-col p-8 md:p-12 pt-16 md:pt-20">
             <div className="text-center mb-4">
               <h1
                 className="text-2xl md:text-3xl lg:text-4xl font-bold text-black uppercase"
@@ -101,10 +101,10 @@ export default function CompromisoPage() {
             </div>
 
 
-            <div className="flex-1 flex items-center justify-center my-2 md:my-6">
-              <div className="max-h-[40vh] md:max-h-[400px] overflow-y-auto p-[25px] md:p-0 md:px-8 w-full">
+            <div className="flex-1 flex items-start justify-start md:items-center md:justify-center my-2 md:my-6">
+              <div className="box-border w-full max-w-full p-[25px] md:p-0 md:px-8 pb-8 max-h-[45vh] md:max-h-[400px] overflow-y-auto overflow-x-hidden">
                 <p
-                  className="text-base md:text-2xl lg:text-3xl text-black text-center leading-relaxed whitespace-pre-wrap break-words"
+                  className="text-base md:text-2xl lg:text-3xl text-black text-center leading-snug md:leading-relaxed whitespace-pre-wrap break-words"
                   style={{ fontFamily: 'Silka, sans-serif', wordBreak: 'break-word', overflowWrap: 'anywhere' }}
                 >
                   {commitment.commitment}
