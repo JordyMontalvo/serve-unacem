@@ -81,7 +81,7 @@ export default function CompromisoPage() {
             className="w-full h-auto"
           />
 
-          <div className="absolute inset-0 flex flex-col p-8 md:p-12 pt-16 md:pt-20">
+          <div className="absolute inset-0 flex flex-col p-8 md:p-12 pt-20 md:pt-20">
             <div className="text-center mb-4">
               <h1
                 className="text-2xl md:text-3xl lg:text-4xl font-bold text-black uppercase"
