@@ -36,34 +36,20 @@ export default function CompromisoPage() {
 
   if (loading) {
     return (
-      <main className="min-h-screen bg-gradient-to-br from-red-50 to-pink-100 py-12 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-4xl mx-auto">
-          <div className="bg-white rounded-lg shadow-xl p-8 text-center">
-            <p className="text-gray-600">Cargando compromiso...</p>
-          </div>
-        </div>
-      </main>
+      <div className="py-8 text-center" style={{ fontFamily: 'Silka, sans-serif' }}>
+        Cargando compromiso...
+      </div>
     );
   }
-
+  
   if (error) {
     return (
-      <main className="min-h-screen bg-gradient-to-br from-red-50 to-pink-100 py-12 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-4xl mx-auto">
-          <div className="bg-white rounded-lg shadow-xl p-8">
-            <div className="p-4 bg-red-50 border border-red-200 rounded-lg">
-              <p className="text-red-800 font-semibold">Error</p>
-              <p className="text-red-700 text-sm">{error}</p>
-            </div>
-            <a
-              href="/"
-              className="mt-4 inline-block text-red-600 hover:text-red-800 underline"
-            >
-              Volver al inicio
-            </a>
-          </div>
-        </div>
-      </main>
+      <div className="py-8 text-center" style={{ fontFamily: 'Silka, sans-serif' }}>
+        <p className="text-black">Error: {error}</p>
+        <a href="/" className="mt-2 inline-block text-red-600 underline">
+          Volver al inicio
+        </a>
+      </div>
     );
   }
 
@@ -80,62 +66,67 @@ export default function CompromisoPage() {
   });
 
   return (
-    <main className="min-h-screen bg-gradient-to-br from-red-50 to-pink-100 py-12 px-4 sm:px-6 lg:px-8">
+    <main className="min-h-screen bg-white py-8 px-4 sm:px-6 lg:px-8">
       <div className="max-w-4xl mx-auto">
-        <div className="bg-white rounded-lg shadow-xl p-8 md:p-12">
-          <div className="mb-6">
-            <a
-              href="/"
-              className="text-red-600 hover:text-red-800 underline text-sm"
-            >
-              ← Volver al inicio
-            </a>
-          </div>
+        <div className="mb-6">
+          <a href="/" className="text-red-600 hover:text-red-800 underline text-sm">
+            ← Volver al inicio
+          </a>
+        </div>
 
-          {/* Título */}
-          <div className="text-center mb-8">
-            <h1 className="text-3xl md:text-4xl font-bold text-black uppercase mb-2" style={{ fontFamily: 'Chaney, serif' }}>
-              COMPROMISO 2026
-            </h1>
-          </div>
+        <div className="relative">
+          <img
+            src="/assets/images/marco cuadrado final.png"
+            alt="Marco certificado"
+            className="w-full h-auto"
+          />
 
-          {/* Compromiso */}
-          <div className="mb-8">
-            <div className="p-6 md:p-8 bg-gray-50 rounded-lg border-2 border-red-200">
-              <p className="text-lg md:text-xl text-black leading-relaxed whitespace-pre-wrap" style={{ fontFamily: 'Silka, sans-serif' }}>
+          <div className="absolute inset-0 flex flex-col p-8 md:p-12 pt-16 md:pt-20">
+            <div className="text-center mb-4">
+              <h1
+                className="text-2xl md:text-3xl lg:text-4xl font-bold text-black uppercase"
+                style={{ fontFamily: 'Chaney, serif' }}
+              >
+                COMPROMISO 2026
+              </h1>
+            </div>
+
+            <div className="text-center mb-4">
+              <p
+                className="text-base md:text-lg lg:text-xl text-black"
+                style={{ fontFamily: 'Silka, sans-serif' }}
+              >
+                YO, <strong>{commitment.userName}</strong>, ME COMPROMETO A:
+              </p>
+            </div>
+
+
+            <div className="flex-1 flex items-center justify-center my-4 md:my-6">
+              <p
+                className="text-xl md:text-2xl lg:text-3xl text-black text-center leading-relaxed whitespace-pre-wrap px-4 md:px-8"
+                style={{ fontFamily: 'Silka, sans-serif' }}
+              >
                 {commitment.commitment}
               </p>
             </div>
-          </div>
 
-          {/* Información adicional */}
-          <div className="space-y-4 border-t pt-6">
-            <div>
-              <label className="block text-sm font-medium text-gray-500 mb-1">
-                Comprometido por
-              </label>
-              <p className="text-lg text-black font-semibold" style={{ fontFamily: 'Silka, sans-serif' }}>
-                {commitment.userName}
+            <div className="mt-auto text-center pt-2">
+              <p
+                className="text-base md:text-lg lg:text-xl text-black"
+                style={{ fontFamily: 'Silka, sans-serif' }}
+              >
+                {commitment.signature || commitment.userName}
               </p>
             </div>
-
-            <div>
-              <label className="block text-sm font-medium text-gray-500 mb-1">
-                Fecha de creación
-              </label>
-              <p className="text-sm text-gray-600">{fechaCreacion}</p>
-            </div>
-
-            <div>
-              <label className="block text-sm font-medium text-gray-500 mb-1">
-                ID del compromiso
-              </label>
-              <p className="text-xs text-gray-500 font-mono break-all">{commitment.commitment_id}</p>
-            </div>
           </div>
+        </div>
+
+        <div className="mt-6 text-center text-xs text-gray-500">
+          <span>ID: {commitment.commitment_id}</span>
+          <span className="mx-2">•</span>
+          <span>{fechaCreacion}</span>
         </div>
       </div>
     </main>
   );
 }
-
