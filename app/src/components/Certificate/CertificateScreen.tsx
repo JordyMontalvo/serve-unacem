@@ -53,38 +53,53 @@ export const CertificateScreen = () => {
 
           {/* Contenido del certificado superpuesto */}
           <div className="absolute inset-0 flex flex-col px-4 pt-12 pb-6 md:p-12 md:pt-20 lg:pt-28 min-h-0">
-            {/* Título COMPROMISO 2026 - bajado un poco */}
-            <div className="text-center mb-4 md:mb-6">
-              <h1
-                className="text-xl md:text-3xl lg:text-4xl font-bold text-black uppercase mt-1 md:mt-0"
-                style={{ fontFamily: 'Chaney, serif' }}
-              >
-                COMPROMISO 2026
-              </h1>
-            </div>
+            {/* Div contenedor que envuelve todo el contenido del certificado */}
+            <div className="relative w-[85%] max-w-[85%] h-auto max-h-[92%] flex flex-col mx-auto my-auto">
+              {/* Contenido del certificado */}
+              <div className="relative z-10 flex flex-col h-auto min-h-[430px] md:min-h-[480px] lg:min-h-[520px] md:-mt-16 lg:-mt-30">
+                {/* Título COMPROMISO 2026 - bajado un poco */}
+                <div className="text-center mb-4 md:mb-6 px-4 md:px-8">
+                  <h1
+                    className="text-xl md:text-3xl lg:text-4xl font-bold text-black uppercase mt-1 md:mt-0"
+                    style={{ fontFamily: 'Chaney, serif' }}
+                  >
+                    COMPROMISO 2026
+                  </h1>
+                </div>
 
-            {/* Texto de compromiso personalizado */}
-            <div className="text-center mb-2 md:mb-4">
-              <p
-                className="text-sm md:text-lg lg:text-xl text-black"
-                style={{ fontFamily: 'Silka, sans-serif' }}
-              >
-                YO, <strong>{userName}</strong>, ME COMPROMETO A:
-              </p>
-            </div>
+                {/* Texto de compromiso personalizado */}
+                <div className="text-center mb-2 md:mb-4 px-4 md:px-8 md:mt-4 lg:mt-6">
+                  <p
+                    className="text-lg md:text-2xl lg:text-3xl text-black"
+                    style={{ fontFamily: 'Silka, sans-serif' }}
+                  >
+                    Yo, <strong>{userName.toUpperCase()}</strong>, me comprometo a:
+                  </p>
+                </div>
 
-            {/* Compromiso - área con scroll dentro del marco en móvil */}
-            <div
-              className="flex-1 min-h-0 overflow-y-auto overflow-x-hidden px-0 md:px-8 pb-16 md:pb-8"
-              style={{ overscrollBehavior: 'contain' }}
-            >
-              <div className="box-border w-full p-[25px] md:p-0">
-                <p
-                  className="text-lg md:text-2xl lg:text-3xl mb-2 text-black text-center leading-snug md:leading-relaxed break-words"
-                  style={{ fontFamily: 'Silka, sans-serif', wordBreak: 'break-word', overflowWrap: 'anywhere' }}
+                {/* Compromiso - área con scroll dentro del marco en móvil */}
+                <div
+                  className="flex-1 min-h-0 overflow-y-auto overflow-x-hidden px-4 md:px-8 pb-16 md:pb-8"
+                  style={{ overscrollBehavior: 'contain' }}
                 >
-                  {commitment}
-                </p>
+                  <div className="box-border w-full p-[25px] md:p-0 md:mt-4 lg:mt-6">
+                    <div className="max-w-[85%] mx-auto">
+                      <p
+                        className="text-lg md:text-2xl lg:text-3xl mb-2 text-black text-center break-words"
+                        style={{ 
+                          fontFamily: 'Silka, sans-serif', 
+                          wordBreak: 'break-word', 
+                          overflowWrap: 'anywhere',
+                          lineHeight: '1.9',
+                          letterSpacing: '0.02em',
+                          whiteSpace: 'pre-wrap'
+                        }}
+                      >
+                        {commitment}
+                      </p>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
