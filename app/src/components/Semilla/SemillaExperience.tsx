@@ -73,26 +73,30 @@ export const SemillaExperience = () => {
 
         {/* Estado: Animación */}
         {state === 'animating' && (
-          <motion.div
-            key="animating"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.3 }}
-            className="flex items-center justify-center w-full h-screen"
-          >
-            <video
-              ref={videoRef}
-              src="/assets/semillaopen.mp4"
-              autoPlay
-              muted
-              playsInline
-              onEnded={handleVideoEnd}
-              className="max-w-[500px] w-full h-auto object-contain"
-            >
-              <source src="/assets/semillaopen.mp4" type="video/mp4" />
-            </video>
-          </motion.div>
+          <div className="relative w-full min-h-screen flex flex-col items-center justify-center">
+            <div className="flex-1 flex items-center justify-center w-full pb-64 md:pb-72">
+              <motion.div
+                key="animating"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.3 }}
+                className="flex items-center justify-center w-full"
+              >
+                <video
+                  ref={videoRef}
+                  src="/assets/semillaopen.mp4"
+                  autoPlay
+                  muted
+                  playsInline
+                  onEnded={handleVideoEnd}
+                  className="max-w-[500px] w-full h-auto object-contain px-5"
+                >
+                  <source src="/assets/semillaopen.mp4" type="video/mp4" />
+                </video>
+              </motion.div>
+            </div>
+          </div>
         )}
 
         {/* Estado: Expuesta */}
@@ -100,17 +104,20 @@ export const SemillaExperience = () => {
           <div className="relative w-full min-h-screen flex flex-col items-center justify-center">
             {/* Contenedor de la semilla - siempre centrada y visible */}
             <div className="flex-1 flex items-center justify-center w-full pb-64 md:pb-72">
-              <motion.img
-                key="exposed"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 0.5 }}
-                src="/assets/semilla2.png"
-                alt="Semilla expuesta con núcleo rojo"
-                className="max-w-[500px] w-full h-auto object-contain px-5 z-10"
-              />
-              {/* Efecto de glow en el núcleo rojo */}
-              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-red-500 opacity-20 rounded-full blur-3xl pointer-events-none animate-pulse z-0" />
+              {/* Contenedor relativo para la imagen y el glow - se ajusta al tamaño de la imagen */}
+              <div className="relative inline-block max-w-[500px] w-full">
+                <motion.img
+                  key="exposed"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ duration: 0.5 }}
+                  src="/assets/semilla2.png"
+                  alt="Semilla expuesta con núcleo rojo"
+                  className="w-full h-auto object-contain px-5 z-10 block"
+                />
+                {/* Efecto de glow en el núcleo rojo - posicionado relativo al contenedor de la imagen */}
+                <div className="absolute top-[25%] left-1/2 transform -translate-x-1/2 w-64 h-64 bg-red-500 opacity-20 rounded-full blur-3xl pointer-events-none animate-pulse z-0" />
+              </div>
             </div>
             
             {/* Caja de compromiso en la parte inferior */}
