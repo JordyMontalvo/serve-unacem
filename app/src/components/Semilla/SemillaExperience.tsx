@@ -11,6 +11,7 @@ export const SemillaExperience = () => {
   const [state, setState] = useState<SemillaState>('presentation');
   const [showCommitmentBox, setShowCommitmentBox] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
+  const presentationVideoRef = useRef<HTMLVideoElement>(null);
 
   // Solo renderizar si estamos en los pasos correctos
   if (currentStep !== 'seed' && currentStep !== 'commitment') {
@@ -28,6 +29,20 @@ export const SemillaExperience = () => {
     }, 500);
   };
 
+  const handlePresentationVideoEnd = () => {
+    // Mantener el video en el último frame para que se quede ahí
+    // El NarrativeBox seguirá visible y el usuario podrá continuar cuando termine de leer
+    if (presentationVideoRef.current) {
+      const video = presentationVideoRef.current;
+      // Ir al último frame y pausar para que se quede ahí
+      if (video.duration && !isNaN(video.duration)) {
+        video.currentTime = video.duration;
+      }
+      video.pause();
+    }
+    // No avanzamos automáticamente, esperamos a que el usuario termine con el NarrativeBox
+  };
+
   return (
     <div className="relative min-h-screen bg-black flex items-center justify-center overflow-hidden">
       <AnimatePresence mode="wait">
@@ -41,11 +56,17 @@ export const SemillaExperience = () => {
             transition={{ duration: 0.5 }}
             className="flex flex-col items-center justify-center w-full h-screen"
           >
-            <img
-              src="/assets/images/semilla davinci.png"
-              alt="Semilla de compromisos"
+            <video
+              ref={presentationVideoRef}
+              src="/assets/semillaluna.mp4"
+              autoPlay
+              muted
+              playsInline
+              onEnded={handlePresentationVideoEnd}
               className="max-w-[500px] w-full h-auto object-contain px-5"
-            />
+            >
+              <source src="/assets/semillaluna.mp4" type="video/mp4" />
+            </video>
             <NarrativeBox onComplete={startAnimation} />
           </motion.div>
         )}
@@ -84,7 +105,7 @@ export const SemillaExperience = () => {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.5 }}
-                src="/assets/images/semilla-expuesta.png"
+                src="/assets/semilla2.png"
                 alt="Semilla expuesta con núcleo rojo"
                 className="max-w-[500px] w-full h-auto object-contain px-5 z-10"
               />
