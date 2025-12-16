@@ -111,7 +111,7 @@ export const SemillaExperience = () => {
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ duration: 0.5 }}
-                  src="/assets/semilla2.png"
+                  src="/assets/semillaoptimizada.png"
                   alt="Semilla expuesta con núcleo rojo"
                   className="w-full h-auto object-contain px-5 z-10 block"
                 />
