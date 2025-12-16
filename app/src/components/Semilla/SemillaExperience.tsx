@@ -54,7 +54,10 @@ export const SemillaExperience = () => {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.5 }}
-            className="flex flex-col items-center justify-center w-full h-screen"
+            // NarrativeBox es `fixed` y no ocupa espacio en el layout.
+            // Reservamos espacio abajo para que el video quede "al ras" del borde superior del NarrativeBox
+            // tanto en móvil como en desktop.
+            className="flex flex-col items-center justify-end w-full h-screen pb-28 md:pb-32"
           >
             <video
               ref={presentationVideoRef}
