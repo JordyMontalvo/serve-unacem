@@ -66,7 +66,7 @@ export const SemillaExperience = () => {
               muted
               playsInline
               onEnded={handlePresentationVideoEnd}
-              className="max-w-[500px] w-full h-auto object-contain px-5"
+              className="max-w-[500px] md:max-w-[620px] lg:max-w-[700px] w-full h-auto object-contain px-5"
             >
               <source src="/assets/semillaluna.mp4" type="video/mp4" />
             </video>
