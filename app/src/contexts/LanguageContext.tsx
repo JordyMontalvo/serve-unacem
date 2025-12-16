@@ -54,7 +54,7 @@ const translations = {
     // Thank You Screen
     'thankyou.title': '¡Gracias, {name}!',
     'thankyou.message1': 'Tu compromiso ha sido plantado como una semilla.',
-    'thankyou.message2': 'Pronto verás cómo crece y contribuye al futuro del Grupo UNACEM.',
+    'thankyou.message2': 'Pronto verás cómo crece y contribuye al futuro de grupo unacem.',
     'thankyou.saved': '✓ Tu compromiso ha sido guardado',
     'thankyou.share': 'Comparte tu compromiso con esta URL:',
     'thankyou.final': 'Puedes volver al Zoom cuando estés listo.',
@@ -62,7 +62,7 @@ const translations = {
   en: {
     // Welcome Screen
     'welcome.title': 'THE SEED OF COMMITMENT',
-    'welcome.subtitle': 'Let us sow our commitment to the future of UNACEM Group',
+    'welcome.subtitle': 'Let us sow our commitment to the future of Grupo Unacem',
     'welcome.button': 'START',
     'welcome.instruction': 'Press start',
     
@@ -100,7 +100,7 @@ const translations = {
     // Thank You Screen
     'thankyou.title': 'Thank you, {name}!',
     'thankyou.message1': 'Your commitment has been planted as a seed.',
-    'thankyou.message2': 'Soon you will see how it grows and contributes to the future of UNACEM Group.',
+    'thankyou.message2': 'Soon you will see how it grows and contributes to the future of Grupo Unacem.',
     'thankyou.saved': '✓ Your commitment has been saved',
     'thankyou.share': 'Share your commitment with this URL:',
     'thankyou.final': 'You can return to Zoom when you are ready.',
