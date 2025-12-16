@@ -1,23 +1,32 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import { motion } from 'framer-motion';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 interface NarrativeBoxProps {
   onComplete: () => void;
 }
 
-const narrativeText = [
-  '> Esta es una semilla especial...',
-  '> En su interior hay un compromiso por asumir',
-  '> Ese compromiso es el núcleo de esta semilla',
-  '> Es lo que nos impulsa a liberar el valor de nuestras operaciones y llevarlas a su máximo potencial',
-  '> Y así fortalecer nuestras bases sobre las que queremos construir el futuro',
-  '> Observa cómo se revela su interior...',
-];
-
 export const NarrativeBox = ({ onComplete }: NarrativeBoxProps) => {
+  const { t, language } = useLanguage();
   const [currentLine, setCurrentLine] = useState(0);
   const [displayedText, setDisplayedText] = useState('');
   const [isTyping, setIsTyping] = useState(true);
+
+  const narrativeText = useMemo(() => [
+    t('narrative.line1'),
+    t('narrative.line2'),
+    t('narrative.line3'),
+    t('narrative.line4'),
+    t('narrative.line5'),
+    t('narrative.line6'),
+  ], [t]);
+
+  useEffect(() => {
+    // Reset cuando cambia el idioma
+    setCurrentLine(0);
+    setDisplayedText('');
+    setIsTyping(true);
+  }, [language]);
 
   useEffect(() => {
     if (currentLine >= narrativeText.length) {
@@ -47,7 +56,7 @@ export const NarrativeBox = ({ onComplete }: NarrativeBoxProps) => {
     }, 30); // Velocidad de typing
 
     return () => clearInterval(typingInterval);
-  }, [currentLine, onComplete]);
+  }, [currentLine, narrativeText, onComplete]);
 
   return (
     <motion.div

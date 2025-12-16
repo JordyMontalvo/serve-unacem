@@ -1,10 +1,12 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useAppContext } from '@/contexts/AppContext';
+import { useLanguage } from '@/contexts/LanguageContext';
 import { validateName } from '@/utils/validation';
 
 export const NameInputScreen = () => {
   const { userName, setUserName, setCurrentStep } = useAppContext();
+  const { t } = useLanguage();
   const [inputValue, setInputValue] = useState(userName);
   const [error, setError] = useState<string | null>(null);
   const [isValid, setIsValid] = useState(false);
@@ -19,7 +21,7 @@ export const NameInputScreen = () => {
       return;
     }
 
-    const validation = validateName(value);
+    const validation = validateName(value, t);
     if (validation.isValid) {
       setError(null);
       setIsValid(true);
@@ -51,7 +53,7 @@ export const NameInputScreen = () => {
           className="font-chaney text-3xl md:text-4xl text-black text-center mb-8 uppercase"
           style={{ fontFamily: 'Chaney, serif' }}
         >
-          ¿Cuál es tu nombre?
+          {t('name.title')}
         </motion.h2>
 
         {/* Input */}
@@ -65,7 +67,7 @@ export const NameInputScreen = () => {
             type="text"
             value={inputValue}
             onChange={handleInputChange}
-            placeholder="Escribe tu nombre aquí"
+            placeholder={t('name.placeholder')}
             className={`w-full px-4 py-3 text-lg border-2 rounded-md transition-colors duration-200 font-silka ${
               error
                 ? 'border-red-500 focus:border-red-600'
@@ -111,7 +113,7 @@ export const NameInputScreen = () => {
           }`}
           style={{ fontFamily: 'Silka, sans-serif' }}
         >
-          Continuar
+          {t('name.continue')}
         </motion.button>
       </div>
     </motion.div>

@@ -5,20 +5,23 @@ export interface ValidationResult {
   error?: string;
 }
 
-export const validateName = (name: string): ValidationResult => {
+// Función helper para obtener traducciones (se pasará desde los componentes)
+export type GetTranslation = (key: string, params?: Record<string, string | number>) => string;
+
+export const validateName = (name: string, t: GetTranslation): ValidationResult => {
   const trimmed = name.trim();
   
   if (trimmed.length < VALIDATION.nameMinLength) {
     return {
       isValid: false,
-      error: `El nombre debe tener al menos ${VALIDATION.nameMinLength} caracteres`,
+      error: t('name.error.minLength'),
     };
   }
   
   if (trimmed.length > VALIDATION.nameMaxLength) {
     return {
       isValid: false,
-      error: `El nombre no puede tener más de ${VALIDATION.nameMaxLength} caracteres`,
+      error: t('name.error.maxLength'),
     };
   }
   
@@ -26,27 +29,27 @@ export const validateName = (name: string): ValidationResult => {
   if (!/^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+$/.test(trimmed)) {
     return {
       isValid: false,
-      error: 'El nombre solo puede contener letras y espacios',
+      error: t('name.error.invalid'),
     };
   }
   
   return { isValid: true };
 };
 
-export const validateCommitment = (text: string): ValidationResult => {
+export const validateCommitment = (text: string, t: GetTranslation): ValidationResult => {
   const trimmed = text.trim();
   
   if (trimmed.length < VALIDATION.commitmentMinLength) {
     return {
       isValid: false,
-      error: `El compromiso debe tener al menos ${VALIDATION.commitmentMinLength} caracteres`,
+      error: t('commitment.error.minLength'),
     };
   }
   
   if (trimmed.length > VALIDATION.commitmentMaxLength) {
     return {
       isValid: false,
-      error: `El compromiso no puede tener más de ${VALIDATION.commitmentMaxLength} caracteres`,
+      error: t('commitment.error.maxLength'),
     };
   }
   

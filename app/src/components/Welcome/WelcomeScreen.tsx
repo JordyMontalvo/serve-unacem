@@ -1,8 +1,10 @@
 import { motion } from 'framer-motion';
 import { useAppContext } from '@/contexts/AppContext';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 export const WelcomeScreen = () => {
   const { setCurrentStep } = useAppContext();
+  const { t } = useLanguage();
 
   const handleStart = () => {
     setCurrentStep('name');
@@ -32,7 +34,7 @@ export const WelcomeScreen = () => {
         className="font-chaney text-[40px] md:text-[48px] text-black text-center uppercase leading-tight max-w-[900px] mb-10 px-5"
         style={{ fontFamily: 'Chaney, serif' }}
       >
-        LA SEMILLA DEL COMPROMISO
+        {t('welcome.title')}
       </motion.h1>
 
       {/* Texto Narrativo */}
@@ -43,7 +45,7 @@ export const WelcomeScreen = () => {
         className="text-lg md:text-xl text-black text-center max-w-[650px] mb-12 leading-relaxed px-5"
         style={{ fontFamily: 'Silka, sans-serif' }}
       >
-        Sembremos nuestro compromiso con el futuro del Grupo UNACEM
+        {t('welcome.subtitle')}
       </motion.p>
 
       {/* Botón COMENZAR */}
@@ -57,7 +59,7 @@ export const WelcomeScreen = () => {
         className="bg-[#FF0000] hover:bg-[#E60000] text-white font-silka font-bold text-lg uppercase px-12 py-4 rounded-md transition-colors duration-200 min-h-[48px]"
         style={{ fontFamily: 'Silka, sans-serif' }}
       >
-        COMENZAR
+        {t('welcome.button')}
       </motion.button>
 
       {/* Instrucción sutil */}
@@ -68,7 +70,7 @@ export const WelcomeScreen = () => {
         className="text-sm text-[#999999] text-center mt-4"
         style={{ fontFamily: 'Silka, sans-serif' }}
       >
-        Presiona comenzar
+        {t('welcome.instruction')}
       </motion.p>
     </div>
   );

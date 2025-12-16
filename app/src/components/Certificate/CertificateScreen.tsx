@@ -1,9 +1,11 @@
 import { motion } from 'framer-motion';
 import { useAppContext } from '@/contexts/AppContext';
+import { useLanguage } from '@/contexts/LanguageContext';
 import { submitCommitment } from '@/services/api/commitments';
 
 export const CertificateScreen = () => {
   const { userName, commitment, setCurrentStep, setIsLoading, setCommitmentUrl } = useAppContext();
+  const { t, language } = useLanguage();
 
   const handleContinue = async () => {
     setIsLoading(true);
@@ -63,7 +65,7 @@ export const CertificateScreen = () => {
                     className="text-sm md:text-3xl lg:text-4xl font-bold text-black uppercase mt-1 md:mt-0"
                     style={{ fontFamily: 'Chaney, serif' }}
                   >
-                    COMPROMISO 2026
+                    {t('certificate.title')}
                   </h1>
                 </div>
 
@@ -73,7 +75,11 @@ export const CertificateScreen = () => {
                     className="text-xs md:text-2xl lg:text-3xl text-black"
                     style={{ fontFamily: 'Silka, sans-serif' }}
                   >
-                    Yo, <strong>{userName.toUpperCase()}</strong>, me comprometo a:
+                    {language === 'es' ? (
+                      <>Yo, <strong>{userName.toUpperCase()}</strong>, me comprometo a:</>
+                    ) : (
+                      <>I, <strong>{userName.toUpperCase()}</strong>, commit to:</>
+                    )}
                   </p>
                 </div>
 
@@ -117,7 +123,7 @@ export const CertificateScreen = () => {
             className="px-12 py-4 rounded-md font-silka font-bold text-lg uppercase transition-all duration-200 min-h-[48px] bg-[#FF0000] hover:bg-[#E60000] text-white cursor-pointer"
             style={{ fontFamily: 'Silka, sans-serif' }}
           >
-            Continuar
+            {t('certificate.continue')}
           </button>
         </motion.div>
       </div>

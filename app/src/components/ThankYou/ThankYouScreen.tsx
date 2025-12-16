@@ -1,8 +1,10 @@
 import { motion } from 'framer-motion';
 import { useAppContext } from '@/contexts/AppContext';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 export const ThankYouScreen = () => {
   const { userName, commitmentUrl } = useAppContext();
+  const { t } = useLanguage();
 
   return (
     <motion.div
@@ -24,7 +26,7 @@ export const ThankYouScreen = () => {
           className="font-chaney text-4xl md:text-5xl text-black mb-6 uppercase"
           style={{ fontFamily: 'Chaney, serif' }}
         >
-          ¡Gracias, {userName}!
+          {t('thankyou.title', { name: userName })}
         </motion.h1>
 
         {/* Mensaje principal */}
@@ -35,9 +37,9 @@ export const ThankYouScreen = () => {
           className="text-xl md:text-2xl text-black mb-8 leading-relaxed"
           style={{ fontFamily: 'Silka, sans-serif' }}
         >
-          Tu compromiso ha sido plantado como una semilla.
+          {t('thankyou.message1')}
           <br />
-          Pronto verás cómo crece y contribuye al futuro del Grupo UNACEM.
+          {t('thankyou.message2')}
         </motion.p>
 
         {/* Ícono de semilla opcional */}
@@ -63,10 +65,10 @@ export const ThankYouScreen = () => {
             className="mb-6 p-4 bg-green-50 border border-green-200 rounded-lg max-w-full"
           >
             <p className="text-sm text-green-800 font-semibold mb-2" style={{ fontFamily: 'Silka, sans-serif' }}>
-              ✓ Tu compromiso ha sido guardado
+              {t('thankyou.saved')}
             </p>
             <p className="text-xs text-green-700 mb-2" style={{ fontFamily: 'Silka, sans-serif' }}>
-              Comparte tu compromiso con esta URL:
+              {t('thankyou.share')}
             </p>
             <a
               href={commitmentUrl}
@@ -88,7 +90,7 @@ export const ThankYouScreen = () => {
           className="text-lg text-gray-600"
           style={{ fontFamily: 'Silka, sans-serif' }}
         >
-          Puedes volver al Zoom cuando estés listo.
+          {t('thankyou.final')}
         </motion.p>
       </motion.div>
     </motion.div>

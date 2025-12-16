@@ -1,12 +1,14 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useAppContext } from '@/contexts/AppContext';
+import { useLanguage } from '@/contexts/LanguageContext';
 import { validateCommitment } from '@/utils/validation';
 import { VALIDATION } from '@/utils/constants';
 import { submitCommitment } from '@/services/api/commitments';
 
 export const CommitmentBox = () => {
   const { userName, commitment, setCommitment, setIsLoading, setCurrentStep } = useAppContext();
+  const { t } = useLanguage();
   const [inputValue, setInputValue] = useState(commitment);
   const [error, setError] = useState<string | null>(null);
   const [isValid, setIsValid] = useState(false);
@@ -21,7 +23,7 @@ export const CommitmentBox = () => {
       return;
     }
 
-    const validation = validateCommitment(value);
+    const validation = validateCommitment(value, t);
     if (validation.isValid) {
       setError(null);
       setIsValid(true);
@@ -73,21 +75,21 @@ export const CommitmentBox = () => {
           className="font-chaney text-xl md:text-2xl text-black mb-2 uppercase text-center"
           style={{ fontFamily: 'Chaney, serif' }}
         >
-          Escribe tu compromiso
+          {t('commitment.title')}
         </h3>
 
         <p
           className="text-xs md:text-sm text-gray-600 mb-3 text-center"
           style={{ fontFamily: 'Silka, sans-serif' }}
         >
-          El núcleo rojo representa tu compromiso. Compártelo con nosotros.
+          {t('commitment.description')}
         </p>
 
         <div className="mb-3">
           <textarea
             value={inputValue}
             onChange={handleInputChange}
-            placeholder="Mi compromiso para el 2026 es..."
+            placeholder={t('commitment.placeholder')}
             rows={3}
             className={`w-full px-3 py-2 text-base md:text-lg border-2 rounded-md transition-colors duration-200 font-silka resize-none ${
               error || isOverLimit
@@ -130,7 +132,7 @@ export const CommitmentBox = () => {
           }`}
           style={{ fontFamily: 'Silka, sans-serif' }}
         >
-          Enviar Compromiso
+          {t('commitment.submit')}
         </button>
       </div>
     </motion.div>
