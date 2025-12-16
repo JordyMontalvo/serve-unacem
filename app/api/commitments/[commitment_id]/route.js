@@ -3,6 +3,9 @@ import connectDB from '@/lib/mongodb';
 import Commitment from '@/models/Commitment';
 import { getCorsHeaders } from '@/lib/cors';
 
+// Forzar que esta ruta sea dinámica para evitar ejecución durante el build
+export const dynamic = 'force-dynamic';
+
 // Manejar preflight OPTIONS request
 export async function OPTIONS(request) {
   return new NextResponse(null, {

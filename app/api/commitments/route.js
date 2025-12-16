@@ -5,6 +5,9 @@ import { v4 as uuidv4 } from 'uuid';
 import { getBaseUrl } from '@/lib/utils';
 import { getCorsHeaders } from '@/lib/cors';
 
+// Forzar que esta ruta sea dinámica para evitar ejecución durante el build
+export const dynamic = 'force-dynamic';
+
 // Manejar preflight OPTIONS request
 export async function OPTIONS(request) {
   return new NextResponse(null, {
