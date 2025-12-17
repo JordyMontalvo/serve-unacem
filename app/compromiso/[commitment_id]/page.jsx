@@ -76,7 +76,7 @@ export default function CompromisoPage() {
 
         <div className="relative overflow-hidden">
           <img
-            src="/assets/images/marco cuadrado final.png"
+            src="/assets/semilla1.png"
             alt="Marco certificado"
             className="w-full h-auto"
           />
