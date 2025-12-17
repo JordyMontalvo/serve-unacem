@@ -62,7 +62,7 @@ export const CertificateScreen = () => {
                 {/* Título COMPROMISO 2026 - bajado un poco */}
                 <div className="text-center mb-3 md:mb-6 px-4 md:px-8">
                   <h1
-                    className="text-sm md:text-3xl lg:text-4xl font-bold text-black uppercase mt-1 md:mt-0"
+                    className="text-[clamp(18px,5.2vw,28px)] md:text-3xl lg:text-4xl font-bold text-black uppercase mt-1 md:mt-0 leading-tight"
                     style={{ fontFamily: 'Chaney, serif' }}
                   >
                     {t('certificate.title')}
@@ -72,13 +72,17 @@ export const CertificateScreen = () => {
                 {/* Texto de compromiso personalizado */}
                 <div className="text-center mb-2 md:mb-4 px-4 md:px-8 md:mt-4 lg:mt-6">
                   <p
-                    className="text-xs md:text-2xl lg:text-3xl text-black"
+                    className="text-[clamp(11px,3.5vw,16px)] md:text-2xl lg:text-3xl text-black leading-tight max-w-[92%] mx-auto"
                     style={{ fontFamily: 'Silka, sans-serif' }}
                   >
                     {language === 'es' ? (
-                      <>Yo, <strong>{userName.toUpperCase()}</strong>, me comprometo a:</>
+                      <>
+                        Yo, <strong className="break-words inline-block max-w-full align-baseline">{userName.toUpperCase()}</strong>, me comprometo a:
+                      </>
                     ) : (
-                      <>I, <strong>{userName.toUpperCase()}</strong>, commit to:</>
+                      <>
+                        I, <strong className="break-words inline-block max-w-full align-baseline">{userName.toUpperCase()}</strong>, commit to:
+                      </>
                     )}
                   </p>
                 </div>

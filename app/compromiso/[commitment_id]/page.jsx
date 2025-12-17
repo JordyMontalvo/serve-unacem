@@ -84,7 +84,7 @@ export default function CompromisoPage() {
           <div className="absolute inset-0 flex flex-col p-8 md:p-12 pt-16 md:pt-20 lg:pt-28 min-h-0">
             <div className="text-center mb-4">
               <h1
-                className="text-2xl md:text-3xl lg:text-4xl font-bold text-black uppercase"
+                className="text-[clamp(18px,5.2vw,28px)] md:text-3xl lg:text-4xl font-bold text-black uppercase leading-tight"
                 style={{ fontFamily: 'Chaney, serif' }}
               >
                 COMPROMISO 2026
@@ -93,10 +93,10 @@ export default function CompromisoPage() {
 
             <div className="text-center mb-4">
               <p
-                className="text-base md:text-lg lg:text-xl text-black"
+                className="text-[clamp(11px,3.5vw,16px)] md:text-lg lg:text-xl text-black leading-tight max-w-[92%] mx-auto"
                 style={{ fontFamily: 'Silka, sans-serif' }}
               >
-                YO, <strong>{commitment.userName}</strong>, ME COMPROMETO A:
+                YO, <strong className="break-words inline-block max-w-full align-baseline">{commitment.userName}</strong>, ME COMPROMETO A:
               </p>
             </div>
 
@@ -107,7 +107,7 @@ export default function CompromisoPage() {
             >
               <div className="box-border w-full p-[25px] md:p-0">
                 <p
-                  className="text-base md:text-2xl lg:text-3xl text-black text-center leading-snug md:leading-relaxed whitespace-pre-wrap break-words"
+                  className="text-[clamp(14px,4.2vw,20px)] md:text-2xl lg:text-3xl text-black text-center leading-snug md:leading-relaxed whitespace-pre-wrap break-words"
                   style={{ fontFamily: 'Silka, sans-serif', wordBreak: 'break-word', overflowWrap: 'anywhere' }}
                 >
                   {commitment.commitment}
