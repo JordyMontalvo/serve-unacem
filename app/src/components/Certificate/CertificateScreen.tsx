@@ -62,7 +62,7 @@ export const CertificateScreen = () => {
                 {/* Título COMPROMISO 2026 - bajado un poco */}
                 <div className="text-center mb-3 md:mb-6 px-4 md:px-8">
                   <h1
-                    className="text-[clamp(18px,5.2vw,28px)] md:text-3xl lg:text-4xl font-bold text-black uppercase mt-1 md:mt-0 leading-tight"
+                    className="p-[5px] text-[clamp(16px,4.8vw,26px)] md:text-3xl lg:text-4xl font-bold text-black uppercase mt-1 md:mt-0 leading-tight"
                     style={{ fontFamily: 'Chaney, serif' }}
                   >
                     {t('certificate.title')}
@@ -77,11 +77,15 @@ export const CertificateScreen = () => {
                   >
                     {language === 'es' ? (
                       <>
-                        Yo, <strong className="break-words inline-block max-w-full align-baseline">{userName.toUpperCase()}</strong>, me comprometo a:
+                        Yo, <strong className="break-words inline-block max-w-full align-baseline">{userName.toUpperCase()}</strong>, me
+                        <br />
+                        comprometo a:
                       </>
                     ) : (
                       <>
-                        I, <strong className="break-words inline-block max-w-full align-baseline">{userName.toUpperCase()}</strong>, commit to:
+                        I, <strong className="break-words inline-block max-w-full align-baseline">{userName.toUpperCase()}</strong>,
+                        <br />
+                        commit to:
                       </>
                     )}
                   </p>
