@@ -48,7 +48,7 @@ export const CertificateScreen = () => {
         >
           {/* Marco decorativo de fondo */}
           <img
-            src="/assets/certificado-optimizado.webp"
+            src="/assets/lienzo-certificado-semilla.webp"
             alt="Marco certificado"
             className="w-full h-auto"
           />

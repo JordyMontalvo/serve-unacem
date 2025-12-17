@@ -76,7 +76,7 @@ export default function CompromisoPage() {
 
         <div className="relative overflow-hidden">
           <img
-            src="/assets/certificado-optimizado.webp"
+            src="/assets/lienzo-certificado-semilla.webp"
             alt="Marco certificado"
             className="w-full h-auto"
           />
