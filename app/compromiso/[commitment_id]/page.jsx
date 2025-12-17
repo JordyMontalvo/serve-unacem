@@ -84,7 +84,7 @@ export default function CompromisoPage() {
           <div className="absolute inset-0 flex flex-col p-8 md:p-12 pt-16 md:pt-20 lg:pt-28 min-h-0">
             <div className="text-center mb-3 md:mb-6 px-4 md:px-8">
               <h1
-                className="p-[5px] text-[clamp(16px,4.8vw,26px)] md:text-3xl lg:text-4xl font-bold text-black uppercase leading-tight"
+                className="p-[5px] mt-0 md:mt-[30px] text-[clamp(16px,4.8vw,26px)] md:text-3xl lg:text-4xl font-bold text-black uppercase leading-tight"
                 style={{ fontFamily: 'Chaney, serif' }}
               >
                 COMPROMISO 2026
@@ -108,16 +108,22 @@ export default function CompromisoPage() {
 
 
             <div
-              className="flex-1 min-h-0 overflow-y-auto overflow-x-hidden px-0 md:px-8 pb-16 md:pb-8"
+              className="flex-1 min-h-0 overflow-y-auto overflow-x-hidden px-4 md:px-8 pb-16 md:pb-8"
               style={{ overscrollBehavior: 'contain' }}
             >
-              <div className="box-border w-full p-[25px] md:p-0">
-                <p
-                  className="text-[clamp(14px,4.2vw,20px)] md:text-2xl lg:text-3xl text-black text-center leading-snug md:leading-relaxed whitespace-pre-wrap break-words"
-                  style={{ fontFamily: 'Silka, sans-serif', wordBreak: 'break-word', overflowWrap: 'anywhere' }}
-                >
-                  {commitment.commitment}
-                </p>
+              <div className="box-border w-full p-[15px] md:p-0 md:mt-4 lg:mt-6">
+                <div className="max-w-[85%] mx-auto">
+                  <p
+                    className="text-[clamp(14px,4.2vw,20px)] md:text-2xl lg:text-3xl text-black text-center leading-snug md:leading-relaxed whitespace-pre-wrap break-words"
+                    style={{
+                      fontFamily: 'Silka, sans-serif',
+                      wordBreak: 'break-word',
+                      overflowWrap: 'anywhere',
+                    }}
+                  >
+                    {commitment.commitment}
+                  </p>
+                </div>
               </div>
             </div>
 
